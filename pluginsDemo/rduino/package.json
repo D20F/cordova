@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-cordovarduino",
+  "version": "0.0.10",
+  "description": "Cordova plugin to communicate with the android USB serial port",
+  "cordova": {
+    "id": "cordova-plugin-cordovarduino",
+    "platforms": [
+      "android",
+      "ubuntu"
+    ]
+  },
+
+  "keywords": [
+    "serial",
+    "arduino",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ubuntu"
+  ],
+  "author": "Xavier Seignard <xavier.seignard@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,87 @@
+var mixin = {
+    data() {
+        return {
+            interval:null
+        }
+    },
+    created() {
+        this.initSerial();
+    },
+    destroyed() {
+        clearInterval(this.interval);
+
+        if (typeof (Serial) != 'undefined') {
+            // 关闭串口
+            Serial.close({}, function(){
+
+            },function(err){
+
+            });
+        }
+    },
+    methods: {
+        initSerial() {
+            var that = this;
+            if (typeof (Serial) != 'undefined') {
+                // 打开串口
+                Serial.open(
+                    {},
+                    // 串口已被打开
+                    function () {
+                        // 注册一个read回调
+                        Serial.registerReadCallback(
+                            function success(res) {
+                                if(Object.prototype.hasOwnProperty.call(res, 'data')){
+                                    // SOH:                 0xFF
+                                    // Length:              0x16
+                                    // Opcode:              0x21
+                                    // Status:              0x0000
+                                    // Option:              0x10
+                                    // Metadat:             0x00
+                                    // Flags:               0x14
+                                    // Ant ID:              0x11
+                                    // Timestamp:           0x00BB5F04
+                                    // Tag EPC:             0x0123456789ABCDEF01234567
+                                    // Tag CRC :            0xE6C8
+                                    // CRC:                 0xEF
+                                    console.log('result:', res.data);
+                                }
+                            },
+                            //read错误回调
+                            function (err) {
+                                console.error(err);
+                            }
+                        );
+
+                        // 执行到应用层
+                        that.writeHex('FF00041D0B');
+
+                        // 轮询读取RFID
+                        that.start();
+                    },
+                    // 打开串口失败的回调
+                    function (err) {
+                        console.error(err);
+                    }
+                );
+            }
+        },
+        writeHex(cmd){
+            if(typeof (Serial) != "undefined"
+            && typeof (Serial.writeHex) != "undefined"){
+                Serial.writeHex(cmd);
+            }
+        },
+        start(){
+            this.interval = setInterval(() => {
+                // 读取标签
+                this.writeHex('FF052101E81000142F6D');
+            }, 1000);
+        }
+    },
+    computed: {},
+}
+export default mixin;
+
+
+

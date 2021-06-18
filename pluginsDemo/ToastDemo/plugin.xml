@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 插件id cordova-plugin-toastdemo-->
+<plugin id="cordova-plugin-toastdemo" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 插件名 ToastDemo-->
+    <name>ToastDemo</name>
+
+    <!--模块名 ToastDemo  源js所在路径 www/ToastDemo.js-->
+    <js-module name="ToastDemo" src="www/ToastDemo.js">
+
+        <!--H5通过它调用js中间件方法（js调用方法的前缀）可自定义   ToastDemo-->
+        <clobbers target="ToastDemo" />
+    </js-module>
+
+    <!-- 添加android -->
+    <platform name="android">
+        <!--插件文件复制到到原生项目位置-->
+        <config-file parent="/*" target="res/xml/config.xml">
+            <!-- JS文件中对应字段 ToastDemo-->
+            <feature name="ToastDemo">
+                <!-- .java类名全路径  可自定义路径，添加会后生成新的包路径 js中间件通过它调用原生方法（包名）--> 
+                <param name="android-package" value="org.apache.cordova.toastdemo.ToastDemo" />
+            </feature>
+        </config-file>
+
+
+
+
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        
+        <!-- src:java源文件的路径， target-dir:插件安装好后，源文件的位置，要和上面的包名对应 -->
+        <source-file src="src/android/ToastDemo.java" target-dir="src/org/apache/cordova/toastdemo" />
+    </platform>
+</plugin>

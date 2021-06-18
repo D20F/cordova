@@ -1,0 +1,16 @@
+{
+    "android": {
+      "release": {
+        "keystore": "baozikeji.keystore",
+        "alias": "android",
+        "storePassword": "baozikeji",
+        "password": "baozikeji"
+      },
+      "debug": {
+        "keystore": "baozikeji.keystore",
+        "alias": "android",
+        "storePassword": "baozikeji",
+        "password": "baozikeji"
+      }
+    }
+}
