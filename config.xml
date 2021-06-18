@@ -60,6 +60,10 @@
         </config-file>
 
 
+        <!-- 让安卓支持发送http请求 -->
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <activity android:usesCleartextTraffic="true" />
+        </edit-config>
 
 
 

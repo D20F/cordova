@@ -13,6 +13,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "cordova-amap-location": "file:../cordova_unpack/pluginsDemo/cordova-amap-location",
     "cordova-android": "8.1.0",
     "cordova-ios": "5.1.1",
     "cordova-plugin-add-swift-support": "^2.0.2",
@@ -58,7 +59,11 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-tts": {},
       "cordova-plugin-zeroconf": {},
-      "cordova-plugin-serial": {}
+      "cordova-plugin-serial": {},
+      "cordova-amap-location": {
+        "ANDROID_KEY": "a8722b4eb3823426c6e1cc9e6e5a340d",
+        "IOS_KEY": "7a39624200180ee16988655ecbba9d59"
+      }
     },
     "platforms": [
       "ios",
