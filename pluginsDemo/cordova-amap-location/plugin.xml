@@ -28,8 +28,6 @@
     <license>Apache 2.0</license>
     <keywords>cordova,location, aMap</keywords>
 
-    <preference name="ANDROID_KEY" />
-    <preference name="IOS_KEY" />
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
@@ -58,7 +56,7 @@
         <service android:name="com.amap.api.location.APSService"/>
         <!-- 启动一个前台服务-->
         <service android:name="com.amap.androidobackgroundlocation.LocationForegoundService"/>
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="$ANDROID_KEY"></meta-data> 
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="a8722b4eb3823426c6e1cc9e6e5a340d"></meta-data> 
         </config-file>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AMapLocation" >
@@ -79,7 +77,7 @@
         </config-file>
 
         <config-file target="*-Info.plist" parent="AMapAppKey">
-          <string>$IOS_KEY</string>
+          <string>7a39624200180ee16988655ecbba9d59</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
