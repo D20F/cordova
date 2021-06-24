@@ -85,5 +85,7 @@ ToastDemo.showToast(“这是Toast内容”);
 ## 安卓启动模式
 <preference name="AndroidLaunchMode" value="standard"/>
 
-cordova plugin add C:\Users\Administrator\Desktop\test\cordova\pluginsDemo\cordova-amap-location --variable ANDROID_KEY=a8722b4eb3823426c6e1cc9e6e5a340d --variable IOS_KEY=7a39624200180ee16988655ecbba9d59
 
+cordova plugin add C:\Users\Administrator\Desktop\test\cordova\pluginsDemo\cordova-amap-location --variable ANDROID_KEY=a8722b4eb3823426c6e1cc9e6e5a340d --variable IOS_KEY=7a39624200180ee16988655ecbba9d59
+cordova plugin remove cordova-amap-location
+cordova plugin add C:\Users\Administrator\Desktop\test\cordova\pluginsDemo\AmapTrackPlugin

@@ -13,6 +13,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "amaptrackplugin": "file:pluginsDemo/AmapTrackPlugin",
     "cordova-amap-location": "file:pluginsDemo/cordova-amap-location",
     "cordova-android": "8.1.0",
     "cordova-ios": "5.1.1",
@@ -60,7 +61,8 @@
       "cordova-plugin-tts": {},
       "cordova-plugin-zeroconf": {},
       "cordova-plugin-serial": {},
-      "cordova-amap-location": {}
+      "cordova-amap-location": {},
+      "com.plugin.wly.amaptrack": {}
     },
     "platforms": [
       "ios",
