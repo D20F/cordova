@@ -2,3 +2,6 @@
 # ignore all except .gitignore file
 *
 !.gitignore
+!/android.json
+!/fetch.json
+!/fetch.json

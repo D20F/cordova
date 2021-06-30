@@ -1,0 +1,62 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-ble-central": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-hotspot": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-tts": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-zeroconf": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-serial": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "com.plugin.wly.amaptrack": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    }
+  },
+  "dependent_plugins": {}
+}
