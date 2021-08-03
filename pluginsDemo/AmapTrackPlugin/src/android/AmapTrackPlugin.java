@@ -96,6 +96,7 @@ public class AmapTrackPlugin extends CordovaPlugin {
             SERVICE_ID = args.getLong(0);
             TERMINAL_NAME = args.getString(1);
             uploadToTrack = args.getBoolean(2);
+            trackId = args.getLong(3);
             this.Start(context);
             return true;
         }
@@ -168,7 +169,7 @@ public class AmapTrackPlugin extends CordovaPlugin {
                 // 成功停止
                 isServiceRunning = false;
                 isGatherRunning = false;
-                callbackContext.success(Long.toString(terminalId));     //停止坐标采集成功后返回高德终端id标识
+                callbackContext.success(Long.toString(trackId));     //停止坐标采集成功后返回轨迹id标识
             } else {
                 //2003：寻迹服务未启动
                 if(status!=2003){
@@ -226,22 +227,27 @@ public class AmapTrackPlugin extends CordovaPlugin {
                         // 当前终端已经创建过，直接使用查询到的terminal id
                         terminalId = queryTerminalResponse.getTid();
                         if (uploadToTrack) {
-                            aMapTrackClient.addTrack(new AddTrackRequest(SERVICE_ID, terminalId), new SimpleOnTrackListener() {
-                                @Override
-                                public void onAddTrackCallback(AddTrackResponse addTrackResponse) {
-                                    if (addTrackResponse.isSuccess()) {
-                                        // trackId需要在启动服务后设置才能生效，因此这里不设置，而是在startGather之前设置了track id
-                                        trackId = addTrackResponse.getTrid();
-                                        TrackParam trackParam = new TrackParam(SERVICE_ID, terminalId);
-//                                        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                                            trackParam.setNotification(createNotification());
-//                                        }
-                                        aMapTrackClient.startTrack(trackParam, onTrackListener);
-                                    } else {
-                                        callbackContext.error("网络请求失败，"+ addTrackResponse.getErrorMsg());
+                            if(trackId == -1){
+                                aMapTrackClient.addTrack(new AddTrackRequest(SERVICE_ID, terminalId), new SimpleOnTrackListener() {
+                                    @Override
+                                    public void onAddTrackCallback(AddTrackResponse addTrackResponse) {
+                                        if (addTrackResponse.isSuccess()) {
+                                            // trackId需要在启动服务后设置才能生效，因此这里不设置，而是在startGather之前设置了track id
+                                            trackId = addTrackResponse.getTrid();
+                                            TrackParam trackParam = new TrackParam(SERVICE_ID, terminalId);
+    //                                        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    //                                            trackParam.setNotification(createNotification());
+    //                                        }
+                                            aMapTrackClient.startTrack(trackParam, onTrackListener);
+                                        } else {
+                                            callbackContext.error("网络请求失败，"+ addTrackResponse.getErrorMsg());
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }else{
+                                TrackParam trackParam = new TrackParam(SERVICE_ID, terminalId);
+                                aMapTrackClient.startTrack(trackParam, onTrackListener);
+                            }
                         } else {
                             // 不指定track id，上报的轨迹点是该终端的散点轨迹
                             TrackParam trackParam = new TrackParam(SERVICE_ID, terminalId);

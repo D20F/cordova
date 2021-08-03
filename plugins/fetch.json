@@ -119,18 +119,18 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-serial": {
-    "source": {
-      "type": "local",
-      "path": "C:\\Users\\Administrator\\Desktop\\test\\cordova\\node_modules\\serial"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "com.plugin.wly.amaptrack": {
     "source": {
       "type": "local",
       "path": "C:\\Users\\Administrator\\Desktop\\test\\cordova\\node_modules\\amaptrackplugin"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-serial": {
+    "source": {
+      "type": "local",
+      "path": "C:\\Users\\Administrator\\Desktop\\test\\cordova\\node_modules\\serial"
     },
     "is_top_level": true,
     "variables": {}

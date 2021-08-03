@@ -14,7 +14,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "amaptrackplugin": "file:pluginsDemo/AmapTrackPlugin",
-    "cordova-amap-location": "file:pluginsDemo/cordova-amap-location",
     "cordova-android": "8.1.0",
     "cordova-ios": "5.1.1",
     "cordova-plugin-add-swift-support": "^2.0.2",
@@ -60,9 +59,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-tts": {},
       "cordova-plugin-zeroconf": {},
-      "cordova-plugin-serial": {},
-      "cordova-amap-location": {},
-      "com.plugin.wly.amaptrack": {}
+      "com.plugin.wly.amaptrack": {},
+      "cordova-plugin-serial": {}
     },
     "platforms": [
       "ios",

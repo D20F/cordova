@@ -51,11 +51,11 @@
     "cordova-plugin-zeroconf": {
       "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
     },
-    "cordova-plugin-serial": {
-      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
-    },
     "com.plugin.wly.amaptrack": {
       "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhe"
+    },
+    "cordova-plugin-serial": {
+      "PACKAGE_NAME": "com.baozi.xiaoqu.longjinhess"
     }
   },
   "dependent_plugins": {}
